@@ -5,27 +5,36 @@ spring:
        - dev
 
 ---
-server:
-    port: 8201
 
 spring:
   profiles: dev
   application:
     name: cloud-dev
 
+server:
+  port: 8761  #设置eureka注册中心端口号
+
 eureka:
-   client:
-      service-url:
-         defaultZone: http://server1.com:8761/eureka/
+  instance:
+    hostname: server1.com      #eureka实例主机名字
+  client:
+    register-with-eureka: false  #不把自己注册到eureka上
+    fetch-registry: false        #不从eureka上获取注册信息，因为自己本身是一个注册中心
+    service-url:
+      
+            defaultZone: http://localhost:8761/eureka/  #这里不设置也可以因为，初始化的时候springcloud设置的就是这个url
+
+
 
 ---
-server:
-    port: 8202
 
 spring:
   profiles: test
   application:
     name: cloud-test
+
+server:
+    port: 8762
 
 eureka:
    client:
