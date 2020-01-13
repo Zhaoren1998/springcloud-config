@@ -1,0 +1,26 @@
+server:
+    port: 8201
+
+spring:
+  profiles: dev
+  application:
+    name: cloud-dev
+
+eureka:
+   client:
+      service-url:
+         defaultZone: http://server1.com:8761/eureka/
+
+---
+server:
+    port: 8202
+
+spring:
+  profiles: test
+  application:
+    name: cloud-test
+
+eureka:
+   client:
+      service-url:
+         defaultZone: http://server2.com:8762/eureka/
