@@ -6,7 +6,7 @@ spring:
 spring:
   profiles: dev
 config:
-  info: "hello bus"
+  info: "hello bus update"
 
 ---
 spring:
