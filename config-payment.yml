@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+config:
+  info: "hello bus"
+
+---
+spring:
+  profiles: test
+ 
