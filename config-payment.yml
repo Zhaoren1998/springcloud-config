@@ -5,10 +5,14 @@ spring:
 ---
 spring:
   profiles: dev
+  application:
+    name: cloud-provider-payment
 config:
   info: "hello bus"
 
 ---
 spring:
   profiles: test
+  application:
+    name: cloud-provider-payment
  
